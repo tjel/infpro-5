@@ -1,5 +1,2 @@
-<<<<<<< HEAD
 BORYS SZYMA
-=======
 Grzegorz Malkiewicz
->>>>>>> 5db6d26218f78f69fc8c6de54681820b0174fadc
