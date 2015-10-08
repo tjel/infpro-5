@@ -1,5 +1,10 @@
 #include<iostream>
+
+using namespace std;
+
 int main()
 {
-	std::cout<<"Hello Word";
+	// co to ma byc ? std::cout<<"Hello Word";
+	cout << " Hell'O'Kitty " << endl; 
+	return 0;
 }
