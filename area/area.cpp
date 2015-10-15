@@ -1,19 +1,19 @@
-# include <iostream>
-#include  <math.h>
-using namespace std;
+#include <iostream>
+#include <cmath>
+
 
 int main( ) 
 {              
     double rad; 
     while(1)
     {
-	cout<< "\nEnter the radius - "; 
-	cin>>rad; 
+	std::cout<< "\nEnter the radius - "; 
+	std::cin>>rad; 
 	if(!(rad<0))
-		break;
+	     break;
 	else
-		cout<<" R is smaller than 0 ";
+	     std::cout<<"R is smaller than 0 ";
     }
-    cout<< "\nArea of the circle is "<< M_PI * rad * rad<<endl; 
+    std::cout<< "\nArea of the circle is "<< M_PI * rad * rad<<std::endl; 
     return 0;
 }  
