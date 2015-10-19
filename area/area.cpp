@@ -1,13 +1,18 @@
-# include <iostream>
-
-using namespace std;
+#include <iostream>
+#include <cmath>
 
 int main( ) 
-{ 
-    float PI = 3.14;                // variables can be initialized during declaration 
-    int rad; 
-    cout<< "Enter the radius"; 
-    cin>>rad; 
-    cout<< "Area of the circle is "<< PI * rad * rad; 
+{              
+    double rad; 
+    while(1)
+    {
+	std::cout<< "\nEnter the radius - "; 
+	std::cin>>rad; 
+	if(!(rad<0))
+	     break;
+	else
+	     std::cout<<"R is smaller than 0 ";
+    }
+    std::cout<< "\nArea of the circle is "<< M_PI * rad * rad<<std::endl; 
     return 0;
 }  
