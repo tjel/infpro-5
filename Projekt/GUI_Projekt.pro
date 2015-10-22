@@ -7,10 +7,14 @@ CONFIG -= app_bundle
 CONFIG += c++11
 TEMPLATE = app
 SOURCES += main.cpp \
-    resource_manager.cpp
+    resource_manager.cpp \
+    vector.inl
 LIBS += -L/usr/local/lib -lSDL2 -ldl -lpthread
 INCLUDES += /usr/local/include
 
 HEADERS += \
-    resource_manager.h
+    resource_manager.h \
+    vector3.h
+
+DISTFILES +=
 
