@@ -1,10 +1,8 @@
-#include "resource_manager.h"
+#include "include/resource_manager.h"
 
 Resource_Manager::Resource_Manager(std::string mNameFile):NameFile(mNameFile)
 {
     std::istringstream date(LoadFile(mNameFile));
-
-
 }
 std::string Resource_Manager::LoadFile(std::string mNameFile)
 {
@@ -15,5 +13,7 @@ std::string Resource_Manager::LoadFile(std::string mNameFile)
     {
         sstream << file.rdbuf();
     }
+    std::map<std::string,std::map<std::string,std::shared_ptr<Object_Image>>> Date;
+    Date["Button"]["Normal"] = std::make_shared<Object_Image>(Vector3i(5,5,5));
     return sstream.str();
 }

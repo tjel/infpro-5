@@ -1,6 +1,5 @@
 #ifndef VECTOR3_H
 #define VECTOR3_H
-
 template <typename T>
 class Vector3
 {
@@ -12,9 +11,8 @@ public:
     T a;
     T b;
     T c;
-
 };
-#include <vector.inl>
+#include <src/vector3.inl>
 typedef Vector3<int>          Vector3i;
 typedef Vector3<unsigned int> Vector3u;
 #endif // VECTOR3_H

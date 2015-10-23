@@ -4,31 +4,42 @@
 #include <sstream>
 #include <memory>
 #include <fstream>
+#include <map>
 #include <vector>
-#include <vector3.h>
-class Object_Resource
+#include <string>
+#include <include/vector3.h>
+#include <include/vector4.h>
+class Object_Image
 {
-    unsigned short heigh;
-    unsigned short width;
-    unsigned short x_pos;
-    unsigned short y_pos;
-    std::string name;
-
-};
-class Object_Button
+public:
+Object_Image(Vector3i a,Vector3i b):Date(a),Middle(b)
 {
- Vector3i RGA = Vector3i(5,10,14);
-};
+}
+Object_Image(Vector3i a):Date(a),Middle(Vector3i())
+{
 
+}
+Object_Image(const Object_Image & object)
+:Date(object.Date),
+ Middle(object.Middle)
+{
+
+}
+Vector3i Date;    //wspol na osi i h i w
+Vector3i Middle;  //Zmiene środka
+};
 class Resource_Manager
 {
 public:
     Resource_Manager(std::string mNameFile);
     std::string LoadFile(std::string mNameFile);
 private:
-    int lenght;
+    std::map<std::string,std::map<std::string,Object_Image>> Date;
     std::string NameFile;
-    std::shared_ptr<Resource_Manager> GetResource;
+    int lenght;
+
+
+
 };
 
 #endif // RESOURCE_MANAGER_H
