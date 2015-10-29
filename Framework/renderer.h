@@ -6,6 +6,7 @@ class Renderer
 {
 public:
     Renderer();
+    Renderer* Render();
 };
 
 #endif // RENDERER_H
