@@ -5,6 +5,7 @@
 #include<string>
 #include<include/Rect.h>
 #include<memory>
+#include<SDL2/SDL_image.h>
 class ObjectGUI
 {
 public:
@@ -12,7 +13,6 @@ public:
     ObjectGUI(std::string Dir,IntRect Part,IntRect Middle);
     ObjectGUI(std::string Dir,IntRect Part);
     ObjectGUI(Vector3i Color);
-    virtual ~ObjectGUI();
     void Good();
 protected:
 private:
@@ -20,6 +20,8 @@ private:
     IntRect mPart;
     IntRect mMiddle;
     std::shared_ptr<Vector3i> mColor;
+    std::shared_ptr<SDL_Texture> mTexture;
+    std::shared_ptr<SDL_Texture> LoadTexture(std::string & name);
 
 };
 

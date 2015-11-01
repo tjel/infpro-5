@@ -12,14 +12,14 @@ ObjectGUI::ObjectGUI(Vector3i Color)
 {
     mColor = std::make_shared<Vector3i>(Color);
 }
-ObjectGUI::~ObjectGUI()
-{
-
-}
 void ObjectGUI::Good()
 {
     if(mColor == nullptr)
         std::cout<<mDir<<"  "<<mPart.left<<" "<<mPart.top<<" "<<mPart.width<<" "<<mPart.height<<"\n";
     else
         std::cout<<mColor->a<<"\n";
+}
+std::shared_ptr<SDL_Texture> ObjectGUI::LoadTexture(std::string & name)
+{
+
 }

@@ -3,7 +3,6 @@
 #include <include/Vector2.h>
 #include <string>
 #include <iostream>
-#include <cstdlib>
 template <typename T>
 class Rect
 {
