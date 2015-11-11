@@ -1,18 +1,17 @@
 #ifndef DRAWABLEOBJECT_H
 #define DRAWABLEOBJECT_H
 
-/* Grzegorz Małkiewicz
- * Klasa Bazowa po której dziedziczą wszystkie rysowane obiekty,
+/* Klasa Bazowa po której dziedziczą wszystkie rysowane obiekty,
  * wykorzystywana do polimorfizmu przez klase DrawRound. */
 
-class DrawableObject
+class Drawable_Object
 {
 public:
-    DrawableObject();
+    Drawable_Object();
 
     //Virtualna funkcja Draw, wywolywana przez kolejke rysowania
     virtual void Draw()=0;
-    DrawableObject* AddToRound();
+    Drawable_Object* AddToQueue();
 protected:
 
 };
