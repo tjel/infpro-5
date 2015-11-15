@@ -3,31 +3,31 @@
 
 #include <string>
 #include <vector>
+#include <map>
 
-struct Parameter
-{
-    std::string parameter_name;
-    std::string value;
-};
-
-struct Section
-{
-    std::string section_name;
-    std::vector<Parameter> parameters;
-};
+typedef std::string SECTION;
+typedef std::string PARAMETER;
+typedef std::string VALUE;
 
 class INI_Data
 {
 public:
     INI_Data();
-    std::string GetDataValue(std::string section, std::string parameter);
+    std::string GetValue(std::string section,
+                             std::string parameter);
 
-    void AddNewSection(std::string section);
-    void AddNewParameter(std::string section, std::string parameter);
-    void AddNewValue(std::string section, std::string parameter, std::string value);
+    void AddValue(std::string section,
+                     std::string parameter,
+                     std::string value);
+
+    unsigned int GetSize();
+
+    std::map<SECTION,
+    std::map<PARAMETER,VALUE>> GetSections();
 
 private:
-    std::vector<Section> sections;
+    std::map<SECTION,
+    std::map<PARAMETER,VALUE>> sections;
 };
 
 #endif // INI_DATA_H

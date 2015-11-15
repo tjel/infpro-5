@@ -11,6 +11,9 @@ public:
     static void SaveFile(std::string file_name, INI_Data data);
 
 private:
+    //to powinno sie znalesc gdzie indziej
+    //ale na razie jest tu (usuwanie spacji)
+    static std::string DeleteSpaces(std::string str);
     INI_Parser();
 };
 
