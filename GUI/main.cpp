@@ -1,14 +1,18 @@
-#include <include/MenagerResource.h>
-#include <include/CRenderer.h>
-int main(int argc, char *argv[])
+#include <include/CRender.hpp>
+#include <include/Gui.hpp>
+#include <include/Button.hpp>
+int main()
 {
-        MenagerResource Load("Black.txt");
-        //First clear the renderer
-        SDL_RenderClear(CRenderer::GetRenerer()->mRender);
-        //Draw the texture
-        //Update the screen
-        SDL_RenderPresent(CRenderer::GetRenerer()->mRender);
-        //Take a quick break after all that hard work
-        SDL_Delay(1000);
+    Gui gui("Black.txt","Black.png");
+    Button * A = new Button(gui,Vector2i(10,100),"Borys");
+    Button * C = new Button(gui,Vector2i(250,300),"NOWA GRA");
+    while(1)
+    {
+        gui.Event_Gui();
+        gui.Draw_Gui();
+        SDL_RenderPresent(CRender::GetRender()->mRender);
+        SDL_RenderClear(CRender::GetRender()->mRender);
+    }
+    SDL_Quit();
+    delete C;
 }
-

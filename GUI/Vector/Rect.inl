@@ -1,18 +1,18 @@
 template <typename T>
-inline Rect<T>::Rect():left(0),top(0),width(0),height(0)
+inline Rect<T>::Rect():x(0),y(0),width(0),height(0)
 {
 
 }
 template <typename T>
-inline Rect<T>::Rect(T A,T B,T C,T D):left(A),top(B),width(C),height(D)
+inline Rect<T>::Rect(T A,T B,T C,T D):x(A),y(B),width(C),height(D)
 {
 
 }
 template <typename T>
 template <typename U>
 inline Rect<T>::Rect(const Rect<U>& vector) :
-    left(static_cast<T>(vector.left)),
-    top(static_cast<T>(vector.top)),
+    x(static_cast<T>(vector.x)),
+    y(static_cast<T>(vector.y)),
     width(static_cast<T>(vector.width)),
     height(static_cast<T>(vector.height))
 {

@@ -14,7 +14,7 @@ public:
     T b;
     T c;
 };
-#include <include/Vector3.inl>
+#include <Vector/Vector3.inl>
 typedef Vector3<int>          Vector3i;
 typedef Vector3<unsigned int> Vector3u;
 #endif // VECTOR4_H

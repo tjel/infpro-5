@@ -11,7 +11,7 @@ public:
     T a;
     T b;
 };
-#include "Vector2.inl"
+#include "Vector/Vector2.inl"
 typedef Vector2<int>          Vector2i;
 typedef Vector2<unsigned int> Vector2u;
 #endif // VECTOR4_H
