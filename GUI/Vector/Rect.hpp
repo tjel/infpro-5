@@ -1,6 +1,6 @@
 #ifndef VECTOR4_H
 #define VECTOR4_H
-#include <include/Vector2.h>
+#include <Vector//Vector2.h>
 #include <string>
 #include <iostream>
 template <typename T>
@@ -13,14 +13,14 @@ public:
     static Rect<T> StringToRect(std::string  date); //Zastanaiwam sie czy to ma sens zeby tu byl static ?
     template <typename U>
     explicit Rect(const Rect<U>& vector);
-    T left;
-    T top;
+    T x;
+    T y;
     T width;
     T height;
 private:
 
 };
-#include <include/Rect.inl>
+#include <Vector/Rect.inl>
 typedef Rect<int>          IntRect;
 typedef Rect<float>        FloatRect;
 #endif // VECTOR4_H
