@@ -20,9 +20,14 @@ public:
                      std::string parameter,
                      std::string value);
 
+    void AddSections(std::string section);
+
     unsigned int GetSize();
 
     bool IsEmpty();
+
+    bool Exist(std::string section,
+               std::string parameter);
 
     std::map<SECTION,
     std::map<PARAMETER,VALUE>> GetSections();
@@ -30,6 +35,7 @@ public:
 private:
     std::map<SECTION,
     std::map<PARAMETER,VALUE>> sections;
+    unsigned size;
 };
 
 #endif // INI_DATA_H

@@ -23,8 +23,6 @@ void Renderer::Render()
     //czyszczenie renderu
     SDL_RenderClear(display_renderer);
 
-
-
     Draw_Queue::GetInstance()->DrawAll();
     SDL_RenderPresent(display_renderer);
     //return this;

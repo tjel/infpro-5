@@ -45,6 +45,7 @@ INI_Data INI_Parser::ParsFile(std::string file_name)
                 {   //wyciagniecie nazwy sekcji
                     section=DeleteSpaces(line.substr(line.find_first_of('[')+1,
                                                      line.find_first_of(']')-1));
+                    //Data.AddSections(section);
                 }
                 else
                 {   //czy znajdue sie znak przypisania
@@ -70,16 +71,23 @@ void INI_Parser::SaveFile(std::string file_name, INI_Data data)
     ini_file.open(file_name,std::ios::out);
     //tworzenie odpowiedniego iteratora i przeszukanie mapy i zapisanie do pliku
     //sekcji, nastepnie parametru z wartoscia
+    data.GetSections().size();
     for(std::map<SECTION,
         std::map<PARAMETER,VALUE>>::iterator it=data.GetSections().begin()
-        ; it!=data.GetSections().end(); ++it)
+        ; it!=data.GetSections().end();)
     {
-       ini_file<<"["<<it->first<<"]\n";
+       if(it->first!="")
+            ini_file<<"["<<it->first<<"]\n";
        for(std::map<PARAMETER,VALUE>::iterator it2=it->second.begin();
-           it2!=it->second.end(); ++it2)
+           it2!=it->second.end();)
        {
-            ini_file<<it2->first<<"="<<it2->second<<"\n";
+           if(true)
+           {
+                ini_file<<it2->first<<"="<<it2->second<<"\n";
+           }
+           it2++;
        }
+       it++;
     }
 
     ini_file.close();

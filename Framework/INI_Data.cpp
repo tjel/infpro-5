@@ -13,11 +13,19 @@ void INI_Data::AddValue(std::string section, std::string parameter,
                            std::string value)
 {
     sections[section][parameter]=value;
+    size=sections.size();
 }
+
+void INI_Data::AddSections(std::string section)
+{
+    sections[section][""]="";
+    size=sections.size();
+}
+
 
 unsigned int INI_Data::GetSize()
 {
-    return sections.size();
+    return size;
 }
 
 bool INI_Data::IsEmpty()
@@ -28,6 +36,15 @@ bool INI_Data::IsEmpty()
         empty=false;
 
     return empty;
+}
+
+bool INI_Data::Exist(std::string section, std::string parameter)
+{
+    bool exist = false;
+    if(GetValue(section, parameter)!="")
+        exist = true;
+
+    return exist;
 }
 
 std::map<SECTION,
