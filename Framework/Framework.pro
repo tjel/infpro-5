@@ -7,6 +7,7 @@ CONFIG += c++11
 QMAKE_CXXFLAGS += -std=c++11
 
 LIBS += -lGL \
+    -lGLU \
     -lSDL2
 
 SOURCES += main.cpp \

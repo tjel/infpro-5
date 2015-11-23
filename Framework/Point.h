@@ -5,10 +5,10 @@ class Point
 {
 public:
     Point();
-    Point(int x, int y);
+    Point(float x, float y);
 
-    int X;
-    int Y;
+    float X;
+    float Y;
 };
 
 #endif // POINT_H

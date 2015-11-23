@@ -22,6 +22,8 @@ public:
 
     unsigned int GetSize();
 
+    bool IsEmpty();
+
     std::map<SECTION,
     std::map<PARAMETER,VALUE>> GetSections();
 

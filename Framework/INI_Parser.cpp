@@ -31,7 +31,8 @@ INI_Data INI_Parser::ParsFile(std::string file_name)
     ini_file.open(file_name,std::fstream::in);
     if(!ini_file)
     {
-        std::cout<<"Blad otwarcia pliku\n";
+        std::cout<<"Nie mozna otworzyc pliku \""<<file_name<<"\"";
+        std::cout<<" Plik moze jeszcze nie istniec"<<std::endl;
     }
     else
     {
@@ -73,7 +74,7 @@ void INI_Parser::SaveFile(std::string file_name, INI_Data data)
         std::map<PARAMETER,VALUE>>::iterator it=data.GetSections().begin()
         ; it!=data.GetSections().end(); ++it)
     {
-       ini_file<<it->first<<"\n";
+       ini_file<<"["<<it->first<<"]\n";
        for(std::map<PARAMETER,VALUE>::iterator it2=it->second.begin();
            it2!=it->second.end(); ++it2)
        {

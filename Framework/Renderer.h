@@ -7,11 +7,15 @@
 class Renderer
 {
 public:
-    Renderer();
-    Renderer* Render();
+    static Renderer* GetRenderer();
+    void Render();
 
-private:
+
     SDL_Renderer* display_renderer;
+private:
+    Renderer();
+    static Renderer* instance;
+
 };
 
 #endif // RENDERER_H

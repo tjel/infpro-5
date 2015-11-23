@@ -1,26 +1,32 @@
 #include "Renderer.h"
 #include "Draw_Queue.h"
 
+Renderer* Renderer::instance=nullptr;
+
 Renderer::Renderer()
 {
 
 }
 
-Renderer* Renderer::Render()
+Renderer* Renderer::GetRenderer()
 {
-    /* Set the background black */
-    glClearColor( 0.0f, 0.0f, 0.0f, 0.0f );
-    /* Clear The Screen And The Depth Buffer */
-    glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
+    if(!instance)
+        instance=new Renderer();
+    return instance;
+}
 
-    /* Move Left 1.5 Units And Into The Screen 6.0 */
-    glLoadIdentity();
-    glTranslatef( -1.5f, 0.0f, -6.0f );
+
+void Renderer::Render()
+{
+    //Ustawienie koloru tła na czarny
+    SDL_SetRenderDrawColor(display_renderer, 0, 0, 0, SDL_ALPHA_OPAQUE);
+    //czyszczenie renderu
+    SDL_RenderClear(display_renderer);
 
 
 
     Draw_Queue::GetInstance()->DrawAll();
     SDL_RenderPresent(display_renderer);
-    return this;
+    //return this;
 }
 

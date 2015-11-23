@@ -20,6 +20,16 @@ unsigned int INI_Data::GetSize()
     return sections.size();
 }
 
+bool INI_Data::IsEmpty()
+{
+    bool empty=true;
+
+    if(sections.size()>0)
+        empty=false;
+
+    return empty;
+}
+
 std::map<SECTION,
 std::map<PARAMETER,VALUE>> INI_Data::GetSections()
 {

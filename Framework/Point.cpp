@@ -1,6 +1,6 @@
 #include "Point.h"
 
-Point::Point(int x, int y)
+Point::Point(float x, float y)
 {
     X=x;
     Y=y;
