@@ -6,12 +6,17 @@ ResourceManager::ResourceManager(std::string FileName)
     if(File->good())//Sprawdzamy czy plik zostal wczytany//
     {
         mTexture = IMG_LoadTexture(CRender::GetRender()->mRender,"Black.png");//Wczytywanie Textury
+        if(mTexture == nullptr)
+        {
+            logSDLError(std::cout,"IMG_LoadTexture");
+        }
         LoadFileConfigurate();
         LoadFont();
     }
     else
     {
-        exit(1);//error
+        std::cout<<"Plik konfiguracyjny nie zostal wczytany\n";
+        exit(1);
     }
 }
 ResourceManager * ResourceManager::GetManagerResource()
@@ -70,7 +75,11 @@ std::string ResourceManager::RemoveAllCharacter(std::string Date,char character)
 void ResourceManager::LoadFont()
 {
     TTF_Init();
-    mFont = TTF_OpenFont( "DejaVuSans.ttf", 29 );
+    mFont = TTF_OpenFont( "DejaVuSans.ttf", 30 );
+    if(mFont == nullptr)
+    {
+        logSDLError(std::cout,"TTF_OpenFont");
+    }
 
 }
 ResourceManager::~ResourceManager()

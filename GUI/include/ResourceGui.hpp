@@ -14,15 +14,14 @@ public:
     IntRect GetMiddle(){return mMiddle;}
     SDL_Rect GetSDLPart(){return SDLPart;}
     SDL_Rect GetSDLMiddle(){return SDLMiddle;}
-    SDL_Rect SDL_GPart();
-    SDL_Rect SDL_GMiddle();
+    Vector3i GetColor(){return mColor;}
     ~ResourceGui();
 private:
     IntRect mPart;
     IntRect mMiddle;
     SDL_Rect SDLPart;
     SDL_Rect SDLMiddle;
-    std::shared_ptr<Vector3i> mColor;
+    Vector3i mColor;
 };
 
 #endif // RESOURCEGUI_H

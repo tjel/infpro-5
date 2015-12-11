@@ -6,10 +6,13 @@
 #include<map>
 #include<include/ResourceGui.hpp>
 #include<SDL2/SDL_image.h>
+#include<SDL2/SDL_log.h>
+#include<SDL2/SDL.h>
 #include<include/CRender.hpp>
 #include<SDL2/SDL_ttf.h>
+#include"include/LogSDL.hpp"
 #include <algorithm>
-class ResourceManager
+class ResourceManager :public LogSDL
 {
 public:
     ResourceManager(std::string FileName);

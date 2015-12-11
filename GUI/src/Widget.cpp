@@ -6,38 +6,31 @@ Widget::Widget()
 }
 void Widget::setPosition(int x, int y)//Ustawianie Pozycji na poctawie x i y;
 {
-   mSDLrect.x = x;
-   mSDLrect.y = y;
+   mPosition.x = x;
+   mPosition.y = y;
 }
-void Widget::setPosition(Vector2i Pos)//Ustawianie Pozycji na poctawie Vector2<int>
+void Widget::setPosition(SDL_Point Pos)//Ustawianie Pozycji na poctawie Vector2<int>
 {
-    mSDLrect.x = Pos.a;
-    mSDLrect.y = Pos.b;
+    mPosition = Pos;
 }
 void Widget::setSize(int w, int h)
 {
-    mSDLrect.w = w;
-    mSDLrect.h = h;
+    mSize.x = w;
+    mSize.y = h;
 }
-void Widget::setSize(Vector2i Size)
+void Widget::setSize(SDL_Point Size)
 {
-    mSDLrect.w = Size.a;
-    mSDLrect.h = Size.b;
+    mSize.x = Size.x;
+    mSize.y = Size.y;
 }
 SDL_Point Widget::GetSize()
 {
-    SDL_Point temp;
-    temp.x = mSDLrect.w;
-    temp.y = mSDLrect.h;
-    return temp;
+    return mSize;
 }
 
 SDL_Point Widget::GetPosition()
 {
-    SDL_Point temp;
-    temp.x = this->mSDLrect.x;
-    temp.y = this->mSDLrect.y;
-    return temp;
+    return mPosition;
 }
 
 void Widget::Draw()
@@ -47,6 +40,20 @@ void Widget::Draw()
 void Widget::handleEvent(SDL_Event * events)
 {
 
+}
+SDL_Rect Widget::GetRect()
+{
+    SDL_Rect temp {mPosition.x,mPosition.y,mSize.x,mSize.y};
+    return temp;
+}
+ int Widget::GetMode()
+{
+    return mode;
+}
+
+void Widget::setMode(int mMode)
+{
+    mode = mMode;
 }
 
 std::shared_ptr<Widget> Widget::GetPtr()

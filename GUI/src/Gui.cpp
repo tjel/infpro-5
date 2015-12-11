@@ -18,12 +18,12 @@ void Gui::Draw_Gui()
 }
 void Gui::Event_Gui()
 {
-     while( SDL_PollEvent( &event ) != 0 )
-     {
-         for(int i = 0;i<mContener.size();i++)
-         {
-             // SDL_RenderCopy(CRender::GetRender()->mRender,this->mTexture,IntRect::RectToSDLRect(Date[i]->GetPosTex()[0]),IntRect::RectToSDLRect(Date[i]->GetRect()));
-             mContener[i]->handleEvent(&event);
-         }
-     }
+    while( SDL_PollEvent( &event ) != 0 )
+    {
+        for(int i = 0;i<mContener.size();i++)
+        {
+            // SDL_RenderCopy(CRender::GetRender()->mRender,this->mTexture,IntRect::RectToSDLRect(Date[i]->GetPosTex()[0]),IntRect::RectToSDLRect(Date[i]->GetRect()));
+            mContener[i]->handleEvent(&event);
+        }
+    }
 }

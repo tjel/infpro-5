@@ -8,18 +8,28 @@ class Widget
 {
 public:
     Widget();
-    virtual void setPosition(int x,int y);
-    virtual void setPosition(Vector2i Pos);
-    virtual void setSize(int w,int h);
-    virtual void setSize(Vector2i Size);
-    virtual SDL_Rect GetRect(){return mSDLrect;}
-    virtual SDL_Point GetPosition();
-    virtual SDL_Point GetSize();
-    virtual std::shared_ptr<Widget> GetPtr();
     virtual void Draw();
     virtual void handleEvent(SDL_Event * events);
+
+    virtual void setPosition(int x,int y);
+    virtual void setPosition(SDL_Point Pos);
+
+    virtual void setSize(int w,int h);
+    virtual void setSize(SDL_Point Size);
+
+    virtual SDL_Rect GetRect();
+
+    virtual SDL_Point GetPosition();
+
+    virtual SDL_Point GetSize();
+    virtual int GetMode();
+    virtual void setMode(int mMode);
+    virtual std::shared_ptr<Widget> GetPtr();
 private:
     SDL_Rect mSDLrect;
+    SDL_Point mPosition;
+    SDL_Point mSize;
+    int mode;
 };
 
 #endif // WIDGET_H

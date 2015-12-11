@@ -2,7 +2,8 @@
 
 ResourceGui::ResourceGui(Vector3i Color)
 {
-    mColor = std::make_shared<Vector3i>(Color);
+    mColor = Color;
+
 }
 
 ResourceGui::ResourceGui(IntRect Part):mPart(Part),mMiddle(IntRect(0,0,0,0))
@@ -15,6 +16,7 @@ ResourceGui::ResourceGui(IntRect Part):mPart(Part),mMiddle(IntRect(0,0,0,0))
     this->SDLMiddle.w = mMiddle.width;
     this->SDLMiddle.x = mMiddle.x;
     this->SDLMiddle.y = mMiddle.y;
+
 }
 
 ResourceGui::ResourceGui(IntRect Part,IntRect Middle):mPart(Part),mMiddle(Middle)
