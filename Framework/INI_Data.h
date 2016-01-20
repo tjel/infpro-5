@@ -13,12 +13,9 @@ class INI_Data
 {
 public:
     INI_Data();
-    std::string GetValue(std::string section,
-                             std::string parameter);
+    std::string GetValue(std::string section, std::string parameter);
 
-    void AddValue(std::string section,
-                     std::string parameter,
-                     std::string value);
+    void AddValue(std::string section, std::string parameter, std::string value);
 
     void AddSections(std::string section);
 
@@ -26,15 +23,12 @@ public:
 
     bool IsEmpty();
 
-    bool Exist(std::string section,
-               std::string parameter);
+    bool Exist(std::string section, std::string parameter);
 
-    std::map<SECTION,
-    std::map<PARAMETER,VALUE>> GetSections();
+    std::map<SECTION, std::map<PARAMETER, VALUE> > GetSections();
 
 private:
-    std::map<SECTION,
-    std::map<PARAMETER,VALUE>> sections;
+    std::map<SECTION, std::map<PARAMETER, VALUE> > sections;
     unsigned size;
 };
 

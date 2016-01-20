@@ -8,17 +8,20 @@
 class Engine
 {
 public:
-    static Engine* GetEngine();
+    static Engine* Get();
 
     void LoadConfigure();
     void StartEngine();
     void SaveConfigure();
+    SDL_Window* GetSDL_Window();
 
 private:
     Engine();
-    static Engine* instance;
+    static Engine* singleton;
     SDL_Window* display_window;
-
+    
+    void MainLoop();
+    
     INI_Data ini_file;
 };
 

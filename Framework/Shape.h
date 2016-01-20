@@ -17,17 +17,27 @@ public:
 
     Shape(Point _point_a, Point _point_b);
 
-    Shape(Point _point_a, Point _point_b,
-          Point _point_c);
+    Shape(Point _point_a, Point _point_b, Point _point_c);
 
-    Shape(Point _point_a, Point _point_b,
-          Point _point_c, Point _point_d);
+    Shape(Point _point_a, Point _point_b, Point _point_c, Point _point_d);
 
     void AddPoint(Point point);
 
     void Draw();
+    
+    void MoveLeft();
+    void MoveRight();
+    void MoveUp();
+    void MoveDown();
+
+    Point* GetPoints(unsigned i);
+
+    void SetVisability(bool _visable);
+
 private:
     std::vector<Point> points;
+    float line_width;
+    bool visable;
 };
 
 #endif // SHAPE_H

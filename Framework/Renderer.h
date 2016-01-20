@@ -3,19 +3,17 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_opengl.h>
 
-
 class Renderer
 {
 public:
-    static Renderer* GetRenderer();
+    static Renderer* Get();
     void Render();
 
-
     SDL_Renderer* display_renderer;
+
 private:
     Renderer();
-    static Renderer* instance;
-
+    static Renderer* singleton;
 };
 
 #endif // RENDERER_H

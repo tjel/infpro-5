@@ -9,19 +9,17 @@ std::string INI_Data::GetValue(std::string section, std::string parameter)
     return sections[section][parameter];
 }
 
-void INI_Data::AddValue(std::string section, std::string parameter,
-                           std::string value)
+void INI_Data::AddValue(std::string section, std::string parameter, std::string value)
 {
-    sections[section][parameter]=value;
-    size=sections.size();
+    sections[section][parameter] = value;
+    size = sections.size();
 }
 
 void INI_Data::AddSections(std::string section)
 {
-    sections[section][""]="";
-    size=sections.size();
+    sections[section][""] = "";
+    size = sections.size();
 }
-
 
 unsigned int INI_Data::GetSize()
 {
@@ -30,10 +28,10 @@ unsigned int INI_Data::GetSize()
 
 bool INI_Data::IsEmpty()
 {
-    bool empty=true;
+    bool empty = true;
 
-    if(sections.size()>0)
-        empty=false;
+    if(sections.size() > 0)
+        empty = false;
 
     return empty;
 }
@@ -41,14 +39,13 @@ bool INI_Data::IsEmpty()
 bool INI_Data::Exist(std::string section, std::string parameter)
 {
     bool exist = false;
-    if(GetValue(section, parameter)!="")
+    if(GetValue(section, parameter) != "")
         exist = true;
 
     return exist;
 }
 
-std::map<SECTION,
-std::map<PARAMETER,VALUE>> INI_Data::GetSections()
+std::map<SECTION, std::map<PARAMETER, VALUE> > INI_Data::GetSections()
 {
     return sections;
 }

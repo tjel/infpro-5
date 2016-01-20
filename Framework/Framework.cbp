@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Framework" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Option virtualFolders="Drawable/;" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Framework" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="include" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Framework" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="include" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-std=c++11" />
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Linker>
+			<Add option="-lSDL2" />
+			<Add option="-lSDL2_image" />
+			<Add option="-lGL" />
+			<Add option="-lGLU" />
+		</Linker>
+		<Unit filename="Data/sound.cpp" />
+		<Unit filename="Data/sound.h" />
+		<Unit filename="Data/texture.cpp" />
+		<Unit filename="Data/texture.h" />
+		<Unit filename="Draw_Queue.cpp">
+			<Option virtualFolder="Drawable/" />
+		</Unit>
+		<Unit filename="Draw_Queue.h">
+			<Option virtualFolder="Drawable/" />
+		</Unit>
+		<Unit filename="Drawable_Object.cpp">
+			<Option virtualFolder="Drawable/" />
+		</Unit>
+		<Unit filename="Drawable_Object.h">
+			<Option virtualFolder="Drawable/" />
+		</Unit>
+		<Unit filename="Engine.cpp" />
+		<Unit filename="Engine.h" />
+		<Unit filename="Event.cpp" />
+		<Unit filename="Event.h" />
+		<Unit filename="Events_Manager.cpp" />
+		<Unit filename="Events_Manager.h" />
+		<Unit filename="INI_Data.cpp" />
+		<Unit filename="INI_Data.h" />
+		<Unit filename="INI_Parser.cpp" />
+		<Unit filename="INI_Parser.h" />
+		<Unit filename="Point.cpp" />
+		<Unit filename="Point.h" />
+		<Unit filename="RM.cpp" />
+		<Unit filename="RM.h" />
+		<Unit filename="Renderer.cpp" />
+		<Unit filename="Renderer.h" />
+		<Unit filename="Shape.cpp" />
+		<Unit filename="Shape.h" />
+		<Unit filename="Sprite_Object.cpp">
+			<Option virtualFolder="Drawable/" />
+		</Unit>
+		<Unit filename="Sprite_Object.h">
+			<Option virtualFolder="Drawable/" />
+		</Unit>
+		<Unit filename="include/Events_Queue.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="src/Events_Queue.cpp" />
+		<Extensions>
+			<envvars />
+			<code_completion />
+			<lib_finder disable_auto="1" />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
